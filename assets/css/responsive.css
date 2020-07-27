@@ -1,0 +1,125 @@
+@media screen and (max-width: 1000px) {
+    body {
+        background-size: 2500px 650px;
+    }
+    .navbar-nav li a::after{
+        content: "";
+    }
+}
+@media screen and (max-width: 768px) {
+    #back-color {
+        height: 900px;
+        border-radius: 0 0 300% 300% / 0 0 150% 150%;
+    }
+    #main-page-back-color {
+        height: 425px;
+        border-radius: 0 0 150% 150% / 0 0 150% 150%;
+    }
+
+    .search_box{
+        margin: 20% auto;
+    }
+    .search_box #logo img{
+        width: 120px;
+    }
+    .footer ul{
+        justify-content: space-evenly;
+    }
+    .footer li a::after{
+        content: "";
+    }
+    .navbar {
+        padding: 8px 16px;
+    }
+    .navbar_search_box {
+        width: 60%;
+        margin-right: 0;
+    }
+
+    .product_detail .product_title{
+        display: block;
+    }
+    .product_detail_left h4{
+        display: none;
+    }
+    .product_detail_content {
+        padding: 4px;
+        margin: 5px auto;
+    }
+    .image_single {
+        align-items: center;
+    }
+    .product_detail_left {
+        margin: 50px auto;
+    }
+    .product_detail_left p{
+        justify-content: center;
+        direction: ltr;
+    }
+    .product_detail_left p span {
+        text-align: center;
+    }
+    .redunndant-space{
+        display: none;
+    }
+    .product_detail_footer #buy_btn {
+        text-align: center;
+        margin: 15px auto;
+    }
+    .product_detail_footer_icons{
+        text-align: center;
+        margin: 15px auto;
+    }
+    .product_detail_footer_icons i {
+        font-size: 1.5rem;
+    }
+    .docs_table_header h4{
+        font-size: 1.25rem;
+    }
+    .e-shops-card .card-header{
+        text-align: center;
+    }
+    .e-shops-header-row{
+        display: none;
+    }
+    .e-shops-row{
+        display: none;
+    }
+    .e-shops-row-mobile{
+        display: block;
+    }
+    .specs-card {
+        margin: 15px;
+    }
+    .cards .card {
+        padding: 4px;
+        margin: 20px 5px;
+        background: #def0fd;
+        border: none;
+        min-width: auto;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    body {
+        background-size: 2500px 500px;
+    }
+}
+@media screen and (max-width: 500px) {
+    body {
+        background-size: 2500px 500px;
+    }
+    .search_box #logo img{
+        width: 100px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        background-size: 1500px 500px;
+    }
+}
+@media screen and (max-width: 300px) {
+    body {
+        background-size: 1500px 500px;
+    }
+}
