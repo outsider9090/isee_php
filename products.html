@@ -22,6 +22,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0"/>
     <title>products</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -42,7 +43,7 @@
             <form action="products.html">
                 <div class="search_frm_container input-group mb-3">
                     <input type="text" class="form-control" placeholder="جست و جو..." aria-label=""
-                           aria-describedby="search_btn" id="search_frm_input">
+                           aria-describedby="search_btn" id="search_frm_input" autocomplete="off">
                     <i class="material-icons" id="search_btn_icon">search</i>
                     <i class="material-icons" id="clear_btn" title="Clear">close</i>
                 </div>
@@ -92,7 +93,7 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link" data-toggle="collapse"
                                             data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                          وضعیت کالا <i class="material-icons">keyboard_arrow_up</i>
+                                        وضعیت کالا <i class="material-icons">keyboard_arrow_up</i>
                                     </button>
                                 </h5>
                             </div>
@@ -147,7 +148,7 @@
 
                 <div class="products_list d-flex justify-content-center">
                     <div class="products_cards">
-                        <div class="card has_badge">
+                        <div class="card">
                             <div class="card-header">
                                 <a href="single.html">
                                     <img src="./assets/images/p2.jpg" alt="">
@@ -155,14 +156,37 @@
                                 <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
                             </div>
                             <div class="card-body">
-                                <i class="material-icons">notifications_none</i>
-                                <div class="product_prices">
-                                    <p><span class="product-price-top digits">43515000</span></p>
-                                    <p><span class="product-price-bottom digits">41500000</span></p>
+                                <!-- if product had discount-->
+                                <div class="row has_badge my-1">
+                                    <span class="products_cart-badge">10%</span>
+                                    <span class="products_cart-badge_text">در ایسام</span>
                                 </div>
-                                <span class="sell_count">10</span>
+                                <!-- if product had discount-->
+
+                                <!-- if product is in one shop-->
+                                <div class="product_price_singleShop my-1">
+                                    <p class="product_price"><span class="digits">43515000 تومان</span></p>
+                                    <p class="product_price_shop"><span class="text-muted">در ایسام</span></p>
+                                </div>
+                                <!-- if product is in one shop-->
                             </div>
-                            <span class="cart-badge">10%</span>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="single.html">
+                                    <!-- when no image is available -->
+                                    <img class="no-image" src="" alt="">
+                                </a>
+                                <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
+                            </div>
+                            <div class="card-body">
+                                <!-- if product is in multi shops-->
+                                <div class="product_price_multiShop my-1">
+                                    <p class="product_price"><span class="digits">700000000 تومان</span></p>
+                                    <p class="product_price_shop_count text-muted"><span>2</span></p>
+                                </div>
+                                <!-- if product is in multi shops-->
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -172,14 +196,20 @@
                                 <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
                             </div>
                             <div class="card-body">
-                                <i class="material-icons">notifications_none</i>
-                                <div class="product_prices">
-                                    <p><span class="product-price-top digits">43515000</span></p>
-                                    <p><span class="product-price-bottom digits">41500000</span></p>
+                                <!-- if product had discount-->
+                                <div class="row has_badge my-1">
+                                    <span class="products_cart-badge">25%</span>
+                                    <span class="products_cart-badge_text">در سیسوگ</span>
                                 </div>
-                                <span class="sell_count">5</span>
+                                <!-- if product had discount-->
+
+                                <!-- if product is in one shop-->
+                                <div class="product_price_singleShop my-1">
+                                    <p class="product_price"><span class="digits">21515000 تومان</span></p>
+                                    <p class="product_price_shop_name"><span class="text-muted">در سیسوگ</span></p>
+                                </div>
+                                <!-- if product is in one shop-->
                             </div>
-                            <span class="cart-badge">10%</span>
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -189,14 +219,13 @@
                                 <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
                             </div>
                             <div class="card-body">
-                                <i class="material-icons">notifications_none</i>
-                                <div class="product_prices">
-                                    <p><span class="product-price-top digits">43515000</span></p>
-                                    <p><span class="product-price-bottom digits">41500000</span></p>
+                                <!-- if product is in multi shops-->
+                                <div class="product_price_multiShop my-1">
+                                    <p class="product_price"><span class="digits">700000000 تومان</span></p>
+                                    <p class="product_price_shop_count text-muted"><span>2</span></p>
                                 </div>
-                                <span class="sell_count">0</span>
+                                <!-- if product is in multi shops-->
                             </div>
-                            <span class="cart-badge">10%</span>
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -206,32 +235,39 @@
                                 <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
                             </div>
                             <div class="card-body">
-                                <i class="material-icons">notifications_none</i>
-                                <div class="product_prices">
-                                    <p><span class="product-price-top digits">43515000</span></p>
-                                    <p><span class="product-price-bottom digits">41500000</span></p>
+                                <!-- if product had discount-->
+                                <div class="row has_badge my-1">
+                                    <span class="products_cart-badge">25%</span>
+                                    <span class="products_cart-badge_text">در سیسوگ</span>
                                 </div>
-                                <span class="sell_count">0</span>
+                                <!-- if product had discount-->
+
+                                <!-- if product is in one shop-->
+                                <div class="product_price_singleShop my-1">
+                                    <p class="product_price"><span class="digits">21515000 تومان</span></p>
+                                    <p class="product_price_shop"><span class="text-muted">در سیسوگ</span></p>
+                                </div>
+                                <!-- if product is in one shop-->
                             </div>
-                            <span class="cart-badge">10%</span>
                         </div>
-                        <div class="card ">
+                        <div class="card">
                             <div class="card-header">
                                 <a href="single.html">
-                                    <img src="./assets/images/p1.jpg" alt="">
+                                    <!-- when no image is available -->
+                                    <img class="no-image" src="" alt="">
                                 </a>
                                 <a href="single.html"><h6 class="partNameBold">ATMEGA16A-PU</h6></a>
                             </div>
                             <div class="card-body">
-                                <i class="material-icons">notifications_none</i>
-                                <div class="product_prices">
-                                    <p><span class="product-price-top digits">43515000</span></p>
-                                    <p><span class="product-price-bottom digits">41500000</span></p>
+                                <!-- if product is in multi shops-->
+                                <div class="product_price_multiShop my-1">
+                                    <p class="product_price"><span class="digits">700000000 تومان</span></p>
+                                    <p class="product_price_shop_count text-muted"><span>2</span></p>
                                 </div>
-                                <span class="sell_count">2</span>
+                                <!-- if product is in multi shops-->
                             </div>
-                            <span class="cart-badge">10%</span>
                         </div>
+
                     </div>
 
 

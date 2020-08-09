@@ -15,8 +15,6 @@
     .image_slides {
         bottom: -140px !important;
     }
-
-
 }
 
 @media screen and (max-width: 768px) {
@@ -143,6 +141,11 @@
 
     #breadcrumb_nav{
         margin-top: 75px;
+    }
+
+    #noSpecsImg{
+        width: 65%;
+        height: 50vh;
     }
 
 }
