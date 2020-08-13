@@ -655,6 +655,7 @@ a:hover {
     margin: 0 15px;
     border: 2px solid #e0e0e0;
     border-radius: 0;
+    height: 100%;
 }
 .e-shops-card .card-header{
     background-color: #ffffff;
@@ -664,10 +665,6 @@ a:hover {
     font-size: 1.25rem;
     font-weight: bold;
     padding: 12px 0;
-}
-.e-shops-card .card-body{
-    /*max-height: 750px;*/
-    /*overflow-y: auto;*/
 }
 .e-shops-card .card-footer{
     background-color: #ffffff;
@@ -694,9 +691,31 @@ a:hover {
     margin: 20px auto;
     border-bottom: 1px solid #eee;
     padding: 10px;
+    align-items: center;
 }
 .e-shops-row:last-child{
     border-bottom:none;
+}
+
+.unavailable_text{
+    display: none;
+}
+.unavailable_product .unavailable_text{
+    display: block;
+}
+
+.e-shops .unavailable_product span.digits , .e-shops .unavailable_product span.subPartPrice ,.e-shops .unavailable_product span.unavailable_text {
+    color: #6c757d !important;
+    font-weight: lighter;
+}
+.e-shops .unavailable_product a.btn{
+    color: #6c757d;
+    border-color: #6c757d;
+}
+.e-shops .unavailable_product a.btn:hover{
+    color: #FFFFFF;
+    border-color: #6c757d;
+    background-color: #6c757d;
 }
 
 .PartPriceContainer{
@@ -723,7 +742,7 @@ a:hover {
     border-radius: 0;
     padding: 12px;
     color: #eee;
-    max-height: 750px;
+    height: auto;
     overflow-y: auto;
     font-family: sans-serif, sans-serif, Arial, Helvetica;
 }
