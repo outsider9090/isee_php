@@ -18,6 +18,27 @@
 }
 
 @media screen and (max-width: 768px) {
+    .signup_form_container{
+        max-width: 100%;
+        padding: 15px;
+        margin: 50px auto;
+        border-radius: 8px;
+    }
+    .contact_us_form_container {
+        width: 100%;
+    }
+    .contact_us_image{
+        display: none !important;
+    }
+    .aboutus_container .aboutus_txt p {
+        font-size: 13px;
+        line-height: 2;
+        padding: 16px;
+    }
+    .shops_cards {
+        justify-content: center;
+        padding: 0 10px;
+    }
     #back-color {
         height: 1050px;
         border-radius: 0 0 300% 300% / 0 0 150% 150%;

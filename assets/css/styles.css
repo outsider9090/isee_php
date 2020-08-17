@@ -88,6 +88,10 @@ a:hover {
     margin: auto;
 }
 
+form label{
+    font-size: 14px;
+}
+
 .btn-danger {
     background-color: #f50057;
     border-color: #f50057;
@@ -477,6 +481,13 @@ a:hover {
 
 
 /* Single Page */
+.similar-products .container-fluid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+
 .navbar_search_box {
     width: 30%;
     margin-right: 15px;
@@ -600,8 +611,6 @@ a:hover {
 
 .image_slides {
     position: absolute !important;
-    /*top: 20px ;*/
-    /*right: -200px ;*/
     bottom: -90px !important;
     right: 0 !important;
     direction: ltr !important;
@@ -785,8 +794,8 @@ a:hover {
     margin-bottom: 12px;
 }
 .cards .card-header img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 1px solid #bdbdbd;
 }
 
@@ -939,10 +948,10 @@ canvas {
     align-content: center;
 }
 #breadcrumb_nav i{
-   transition: 0.4s ease;
-   -webkit-transition: 0.4s ease;
-   -moz-transition: 0.4s ease;
-   -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
 }
 
 ol.breadcrumb {
@@ -952,7 +961,7 @@ ol.breadcrumb {
     margin-bottom: 0;
 }
 ol.breadcrumb a{
-color: #076fa9;
+    color: #076fa9;
 }
 
 #breadcrumb_nav .dropdown .btn{
@@ -1040,7 +1049,7 @@ color: #076fa9;
 .products_cards{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     align-content: center;
     padding: 0 20px;
@@ -1109,13 +1118,13 @@ color: #076fa9;
     text-align: right;
 }
 .product_price_multiShop .product_price::before{
-   content: 'از ';
+    content: 'از ';
 }
 .product_price_multiShop .product_price_shop_count::before{
-   content: 'در ';
+    content: 'در ';
 }
 .product_price_multiShop .product_price_shop_count::after{
-   content: ' فروشگاه';
+    content: ' فروشگاه';
 }
 
 .product_price span{
@@ -1157,30 +1166,182 @@ color: #076fa9;
     opacity: 0.8;
 }
 
-
-
-/*.owl-carousel{*/
-    /*transform: rotate(90deg);*/
-    /*width: 270px;*/
-    /*margin-top:100px;*/
-/*}*/
-/*.owl-item{*/
-    /*transform: rotate(-90deg) !important;*/
-/*}*/
-/*.owl-carousel .owl-nav{*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
-    /*position: absolute;*/
-    /*width: 100%;*/
-    /*top: calc(50% - 33px);*/
-/*}*/
-/*div.owl-carousel .owl-nav .owl-prev, div.owl-carousel .owl-nav .owl-next{*/
-    /*font-size:36px;*/
-    /*top:unset;*/
-    /*bottom: 15px;*/
-/*}*/
-
 /* Single Page */
+
+/* SignUp Page */
+.signup_form_container{
+    max-width: 75%;
+    padding: 24px;
+    background: #fff;
+    margin: 75px auto;
+    box-shadow: 0 0 5px #bdbdbd;
+    border-radius: 14px;
+}
+.signup_form_container form fieldset h5{
+    font-family: Yekan,sans-serif, Arial, Helvetica;
+    font-size: 1.75rem;
+}
+.signup_form_container form input{
+    height: 40px;
+}
+.signup_form_container form i{
+    font-size: 1.25rem;
+}
+.signup_form_container .card{
+    background-color: transparent;
+    border: none;
+}
+.input-group-text{
+    border-radius: 0;
+}
+
+.required label::after{
+    content: "*";
+    color: red;
+    margin: 4px;
+    font-size: 15px;
+}
+button.disabled{
+    cursor: not-allowed;
+}
+
+#signup_frm_submit{
+    position: relative;
+    font-family: Yekan, sans-serif, Arial, Helvetica;
+    font-size: 1.25rem;
+
+}
+#signup_frm_submit i{
+    position: absolute;
+    bottom: -60px;
+}
+.show_pass{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #757575;
+    cursor: pointer;
+    z-index: 1000;
+}
+.show_pass:hover{
+    color: #212121;
+}
+
+/* SignUp Page */
+
+
+/* Shops List page */
+.shops_cards .card{
+    width: 100%;
+    text-align: right;
+    padding: 5px;
+}
+
+.shops_cards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    padding: 0 20px;
+}
+.shops_cards .card{
+    padding: 0;
+    margin: 10px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    min-width: 210px;
+    max-width: 22%;
+    min-height: 350px;
+}
+.shops_cards .card-header {
+    text-align: center;
+    background-color: transparent;
+    border-bottom: none;
+}
+.shops_cards .card-header h6{
+    color: #757575;
+    margin: 12px auto;
+}
+.shops_cards .card-header img{
+    width: 150px;
+    height: 150px;
+}
+.shops_cards .card-body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+}
+.shops_cards .card-body i{
+    font-size: 2rem;
+    color: #757575;
+}
+.shops_cards .card-body .shops_desc p{
+    font-size: 13px;
+    text-align: justify;
+    padding: 12px;
+    line-height: 2;
+    color: #212121;
+}
+
+/* Shops List page */
+
+
+/* Contact Us page */
+.contact_us_form_container{
+    width: 90%;
+    margin: auto;
+}
+.contact_us_form_container .card-header{
+    background: none;
+    padding: 20px;
+}
+.contact_us_form_container .card-header h5{
+    font-family: Yekan,sans-serif, Arial, Helvetica;
+    font-size: 1.75rem;
+}
+.contact_us_form_container .contact_us_image {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact_us_form_container .contact_us_image img{
+    width: 100%;
+    padding: 8px;
+}
+
+.form-text{
+    color: #757575;
+    font-size: 11px;
+    padding: 4px;
+}
+/* Contact Us page */
+
+
+
+/* About Us page */
+.aboutus_container .card-header{
+    background: none;
+    background-image: url("../images/aboutus.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px;
+
+}
+
+.aboutus_container .aboutus_txt p{
+    font-size: 15px;
+    text-align: justify;
+    line-height: 2.5;
+    padding: 8px 24px;
+}
+/* About Us page */
 
 
 
