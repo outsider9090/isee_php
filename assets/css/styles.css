@@ -92,6 +92,28 @@ form label{
     font-size: 14px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px #757575;
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #076fa9;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #757575;
+}
+
+
 .btn-danger {
     background-color: #f50057;
     border-color: #f50057;
@@ -1172,9 +1194,9 @@ ol.breadcrumb a{
 .signup_form_container{
     max-width: 75%;
     padding: 24px;
-    background: #fff;
+    /*background: #fff;*/
     margin: 75px auto;
-    box-shadow: 0 0 5px #bdbdbd;
+    /*box-shadow: 0 0 5px #bdbdbd;*/
     border-radius: 14px;
 }
 .signup_form_container form fieldset h5{
@@ -1204,20 +1226,24 @@ ol.breadcrumb a{
 button.disabled{
     cursor: not-allowed;
 }
-
-#signup_frm_submit{
+input#password , input#password-confirm{
+    font-family: vazirLatin;
+}
+#signup_frm_submit , #contactus_frm_submit{
     position: relative;
     font-family: Yekan, sans-serif, Arial, Helvetica;
     font-size: 1.25rem;
-
 }
-#signup_frm_submit i{
+#signup_frm_submit:disabled{
+    cursor: not-allowed;
+}
+#signup_frm_submit i , #contactus_frm_submit i {
     position: absolute;
     bottom: -60px;
 }
 .show_pass{
     position: absolute;
-    left: 10px;
+    left: 14px;
     top: 10px;
     color: #757575;
     cursor: pointer;
@@ -1225,6 +1251,17 @@ button.disabled{
 }
 .show_pass:hover{
     color: #212121;
+}
+
+.input-group-text{
+    border-radius: 0 40px 40px 0 !important;
+}
+input.signUpInput{
+    border-radius: 40px 0 0 40px !important;
+}
+
+.signup_frm button[type=submit]{
+    border-radius: 40px;
 }
 
 /* SignUp Page */
@@ -1296,9 +1333,14 @@ button.disabled{
     width: 90%;
     margin: auto;
 }
+.contact_us_form_container .card{
+    background: none;
+    border: none;
+}
 .contact_us_form_container .card-header{
     background: none;
     padding: 20px;
+    border: none;
 }
 .contact_us_form_container .card-header h5{
     font-family: Yekan,sans-serif, Arial, Helvetica;
@@ -1310,9 +1352,26 @@ button.disabled{
     justify-content: center;
     align-items: center;
 }
+.contact_us_form_container .contact_us_image figure{
+    text-align: center;
+}
 .contact_us_form_container .contact_us_image img{
-    width: 100%;
+    width: 85%;
     padding: 8px;
+}
+
+.contact_us_frm input{
+    border-radius: 40px;
+}
+.contact_us_frm label{
+    padding: 0 12px;
+}
+.contact_us_frm textarea{
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.contact_us_frm button[type=submit]{
+    border-radius: 40px;
 }
 
 .form-text{
@@ -1325,6 +1384,10 @@ button.disabled{
 
 
 /* About Us page */
+.aboutus_container .card{
+    background: none;
+    border: none;
+}
 .aboutus_container .card-header{
     background: none;
     background-image: url("../images/aboutus.jpg");
@@ -1332,7 +1395,7 @@ button.disabled{
     background-position: center;
     background-repeat: no-repeat;
     min-height: 250px;
-
+    border: none;
 }
 
 .aboutus_container .aboutus_txt p{

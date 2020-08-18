@@ -61,6 +61,8 @@
     </nav>
 </header>
 
+
+<section id="main-page-back-color"></section>
 <main style="margin-top: 100px;">
     <div class="container-fluid w-100">
         <div class="row my-4">
@@ -75,35 +77,44 @@
                                 <div class="col-md-6 col-sm-12">
                                     <form class="contact_us_frm" id="contact_us_frm" novalidate>
                                         <div class="form-row">
-                                            <div class="col-12 mb-4 required" id="your_name_div">
+                                            <div class="col-12 mb-4 required">
                                                 <label for="your_name"> نام شما:</label>
                                                 <input type="text" class="form-control" id="your_name" required>
                                                 <div class="invalid-feedback">
-                                                    <span id="invalid_name">لطفا نام خود را وارد کنید</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-12 mb-4 required" id="subject_div">
-                                                <label for="subject">موضوع:</label>
-                                                <input type="text" class="form-control" id="subject">
-                                                <div class="invalid-feedback">
-                                                    <span id="invalid_subject">لطفا موضوع را وارد کنید</span>
+                                                    <span>لطفا نام خود را وارد کنید</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col-12 mb-4 required">
-                                                <label for="message_body">متن پیام:</label>
-                                                <textarea class="form-control" name="" id="message_body" cols="30" rows="10"></textarea>
+                                                <label for="your_email"> ایمیل شما:</label>
+                                                <input type="text" class="form-control" id="your_email" required>
+                                                <div class="invalid-feedback">
+                                                    <span>لطفا یک ایمیل معتبر وارد کنید</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-12 mb-4 required" id="subject_div">
+                                                <label for="your_subject">موضوع:</label>
+                                                <input type="text" class="form-control" id="your_subject">
+                                                <div class="invalid-feedback">
+                                                    <span>لطفا موضوع را وارد کنید</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-12 mb-4 required">
+                                                <label for="your_message_body">متن پیام:</label>
+                                                <textarea class="form-control" name="" id="your_message_body" cols="30" rows="10"></textarea>
                                                 <div class="form-text">حداقل طول پیام 20 کاراکتر می باشد.</div>
                                                 <div class="invalid-feedback">
-                                                    <span id="invalid_message">طول متن وارد شده کوتاه است</span>
+                                                    <span>طول متن وارد شده کوتاه است</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row my-4">
-                                            <button class="btn btn-success btn-block" type="submit" id="signup_frm_submit">
+                                            <button class="btn btn-success btn-block" type="submit" id="contactus_frm_submit" disabled>
                                                 ارسال<i class="material-icons align-middle mx-2" style="transform: rotateZ(180deg);">send</i>
                                             </button>
                                         </div>
@@ -111,7 +122,7 @@
                                 </div>
                                 <div class="col-md-6 contact_us_image">
                                     <figure>
-                                        <img src="assets/images/contactus.jpg" alt="">
+                                        <img src="assets/images/contactus.png" alt="">
                                     </figure>
                                 </div>
                             </div>

@@ -181,60 +181,176 @@ jQuery(document).ready(function ($) {
 
 
 //  signup form validation
-	let counter = 1;
+	let is_name_validate = false;
+	let is_username_validate = false;
+	let is_email_validate = false;
+	let is_password_validate = false;
+	let is_confirm_password_validate = false;
 
-	simple_validate($('.signup_frm').find('input#name'));
-	simple_validate($('.signup_frm').find('input#username'));
-	$('.signup_frm').find('input#password').on('blur', function () {
+
+	$('.signup_frm').find('input#name').on('input', function () {
 		let value = $(this).val();
 		if (value === ''){
-			counter++;
 			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_name_validate = false;
 		}else {
-			counter--;
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_name_validate = true;
+		}
+		$('.signup_frm').change();
+	});
+	$('.signup_frm').find('input#phone').on('input', function () {
+		let value = $(this).val();
+		if (value === '' || value.length != 11){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_username_validate = false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_username_validate = true;
+		}
+		$('.signup_frm').change();
+
+	});
+	$('.signup_frm').find('input#email').on('input', function () {
+		let value = $(this).val();
+		let emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		let is_email_valid = emailReg.test( value );
+		if (! is_email_valid || value === ''){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_email_validate = false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_email_validate = true;
+		}
+		$('.signup_frm').change();
+
+	});
+	$('.signup_frm').find('input#password').on('input', function () {
+		let value = $(this).val();
+		if (value === ''){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_password_validate =false;
+		}else {
 			$(this).siblings('.invalid-feedback').css('display', 'none');
 			$('.signup_frm').find('input#password-confirm').siblings('.invalid-feedback').css('display', 'none');
+			is_password_validate =true;
 		}
 		$('.signup_frm').find('input#password-confirm').blur();
+		$('.signup_frm').change();
+
 	});
-	$('.signup_frm').find('input#password-confirm').on('blur', function () {
+	$('.signup_frm').find('input#password-confirm').on('input', function () {
 		let value = $(this).val();
 		let pass = $('.signup_frm').find('input#password').val();
-
 		if (value === '' || pass!=value){
-			counter++;
 			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_confirm_password_validate = false;
 		}else {
-			counter--;
 			$(this).siblings('.invalid-feedback').css('display', 'none');
 			$('.signup_frm').find('input#password').siblings('.invalid-feedback').css('display', 'none');
+			is_confirm_password_validate = true;
 		}
+		$('.signup_frm').change();
 	});
 
-	email_validate($('.signup_frm').find('input#email'));
 
+	$('.signup_frm').on('change' , function () {
+		if (is_name_validate && is_username_validate && is_password_validate && is_confirm_password_validate && is_email_validate){
+			$('#signup_frm_submit').attr('disabled' , false);
+		}else {
+			$('#signup_frm_submit').attr('disabled' , true);
+		}
+	});
 //  signup form validation
 
 
 //  contact-us form validation
-	simple_validate($('.contact_us_frm').find('input#your_name'));
-	simple_validate($('.contact_us_frm').find('input#subject'));
-	textarea_validate($('.contact_us_frm').find('textarea#message_body'));
+	let is_your_name_validate = false;
+	let is_your_email_validate = false;
+	let is_your_subject_validate = false;
+	let is_your_message_body_validate = false;
+
+	$('.contact_us_frm').find('input#your_name').on('input', function () {
+		let value = $(this).val();
+		if (value === ''){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_your_name_validate = false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_your_name_validate = true;
+		}
+		$('.contact_us_frm').change();
+	});
+	$('.contact_us_frm').find('input#your_email').on('input', function () {
+		let value = $(this).val();
+		let emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		let is_email_valid = emailReg.test( value );
+		if (! is_email_valid || value === ''){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_your_email_validate = false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_your_email_validate = true;
+		}
+		$('.contact_us_frm').change();
+	});
+	$('.contact_us_frm').find('input#your_subject').on('input', function () {
+		let value = $(this).val();
+		if (value === ''){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_your_subject_validate =false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_your_subject_validate =true;
+		}
+		$('.contact_us_frm').change();
+	});
+	$('.contact_us_frm').find('textarea#your_message_body').on('keyup', function () {
+		let value = $(this).val();
+		if (value.length < 20){
+			$(this).siblings('.invalid-feedback').css('display', 'block');
+			is_your_message_body_validate = false;
+		}else {
+			$(this).siblings('.invalid-feedback').css('display', 'none');
+			is_your_message_body_validate = true;
+		}
+		$('.contact_us_frm').change();
+	});
+
+	$('.contact_us_frm').on('change' , function () {
+		if (is_your_name_validate && is_your_email_validate && is_your_subject_validate && is_your_message_body_validate){
+			$('#contactus_frm_submit').attr('disabled' , false);
+		}else {
+			$('#contactus_frm_submit').attr('disabled' , true);
+		}
+	});
 //  contact-us form validation
 
 
 	$('#signup_frm_submit').hover(function (e) {
-		let is_disabled = $(this).hasClass('disabled');
+		let is_disabled = $(this).attr('disabled');
 		if (! is_disabled){
 			$(this).find('i').animate({bottom: '10px'}, 'fast');
 		}
 	},(function () {
-		let is_disabled = $(this).hasClass('disabled');
+		let is_disabled = $(this).attr('disabled');
 		if (! is_disabled){
 			$(this).find('i').animate({bottom: '-60px'}, 'fast');
 		}
 	}));
-	
+
+	$('#contactus_frm_submit').hover(function (e) {
+		let is_disabled = $(this).attr('disabled');
+		if (! is_disabled){
+			$(this).find('i').animate({bottom: '10px'}, 'fast');
+		}
+	},(function () {
+		let is_disabled = $(this).attr('disabled');
+		if (! is_disabled){
+			$(this).find('i').animate({bottom: '-60px'}, 'fast');
+		}
+	}));
+
 	
 	$('#showPassword').hover(function () {
 		$('.signup_frm').find('input#password').attr('type', 'text');
@@ -248,45 +364,9 @@ jQuery(document).ready(function ($) {
 	}));
 
 
-
-
 });
 
 
 
-
-function simple_validate(element) {
-	element.on('blur', function () {
-		let value = $(this).val();
-		if (value === ''){
-			$(this).siblings('.invalid-feedback').css('display', 'block');
-		}else {
-			$(this).siblings('.invalid-feedback').css('display', 'none');
-		}
-	});
-}
-function textarea_validate(element) {
-	element.on('keyup', function () {
-		let value = $(this).val();
-		console.log(value.length);
-		if (value.length < 20){
-			$(this).siblings('.invalid-feedback').css('display', 'block');
-		}else {
-			$(this).siblings('.invalid-feedback').css('display', 'none');
-		}
-	});
-}
-function email_validate(element) {
-	element.on('blur', function () {
-		let value = $(this).val();
-		let emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-		let is_email_valid = emailReg.test( value );
-		if (! is_email_valid || value === ''){
-			$(this).siblings('.invalid-feedback').css('display', 'block');
-		}else {
-			$(this).siblings('.invalid-feedback').css('display', 'none');
-		}
-	});
-}
 
 
