@@ -69,14 +69,15 @@
                 <div class="send_product_form_container">
                     <div class="card">
                         <div class="card-body">
-                            <form action="insert_product.php" method="post" class="send_product_frm" id="send_product_frm" novalidate>
+                            <form action="insert_product.php" method="post" class="send_product_frm" id="send_product_frm"
+                                  novalidate enctype="multipart/form-data">
                                 <fieldset class="mb-5">
                                     <h5 class="text-center">ارسال محصول جدید</h5>
                                 </fieldset>
                                 <div class="form-row">
                                     <div class="col-12 mb-4 required">
                                         <label for="partnumber">شماره قطعه</label>
-                                        <input type="text" class="form-control" id="partnumber" required>
+                                        <input type="text" class="form-control" id="partnumber" name="partnumber" required>
                                         <div class="invalid-feedback">
                                             <span>لطفا نام خود را وارد کنید</span>
                                         </div>
@@ -85,7 +86,7 @@
                                 <div class="form-row">
                                     <div class="col-12 mb-4 required">
                                         <label for="description">توضیحات قطعه</label>
-                                        <input type="text" class="form-control" id="description" required>
+                                        <input type="text" class="form-control" id="description" name="description" required>
                                         <div class="invalid-feedback">
                                             <span>لطفا نام خود را وارد کنید</span>
                                         </div>
@@ -94,7 +95,7 @@
                                 <div class="form-row">
                                     <div class="col-12 mb-4">
                                         <label for="detaileddescription">توصیف همراه با جزئیات</label>
-                                        <input type="text" class="form-control" id="detaileddescription">
+                                        <input type="text" class="form-control" id="detaileddescription" name="detaileddescription">
                                         <div class="invalid-feedback">
                                             <span>لطفا نام خود را وارد کنید</span>
                                         </div>
@@ -112,10 +113,12 @@
                                     <div class="form-row addImage">
                                         <div class="col-12 mb-4">
                                             <label for="Image">تصویر </label>
-                                            <input type="file" class="form-control" id="Image" name="image[0][name]" accept="image/*">
+<!--                                            <input type="file" class="form-control" id="Image" name="fileToUpload" accept="image/*">-->
+                                            <input type="file" class="form-control" id="Image" name="part_image[0][name]" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="add_document_fieldset" style="position: relative;">
                                     <fieldset class="mb-2">

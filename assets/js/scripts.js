@@ -398,9 +398,9 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		let name_el = $('.addImage').find('input#Image').last();
 		let nameStr = name_el[0]['name'];
-		let nameStrIndex = nameStr.substr(6,1);
+		let nameStrIndex = nameStr.substr(11,1);
 		nameStrIndex++;
-		$('.addImage').append('<div class="col-12 mb-4"><label for="Image">تصویر </label><input type="text" class="form-control" id="Image" name="image['+nameStrIndex+'][name]"></div>');
+		$('.addImage').append('<div class="col-12 mb-4"><label for="Image">تصویر </label><input type="file" class="form-control" id="Image" name="part_image['+nameStrIndex+'][name]" accept="image/*"></div>');
 	});
 
 });
